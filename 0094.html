@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+        <html dir="rtl" lang="ar">
+        <head>
+            <meta charset="UTF-8">
+            <title>Homestuck</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+            <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+        
+            <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+    
+            body {
+                background-color: #666666;
+                font-family: 'Courier New', monospace;
+                color: #000000;
+                direction: rtl;
+            }
+    
+            .navbar {
+                background-color: #666666;
+                padding: 10px 15px;
+                text-align: center;
+                font-size: 12px;
+            }
+    
+            .navbar a {
+                color: #FFFF00;
+                text-decoration: none;
+                margin: 0 3px;
+                font-weight: bold;
+            }
+    
+            .navbar a:hover {
+                text-decoration: underline;
+            }
+    
+            .navbar .green {
+                color: #58d458;
+            }
+    
+            .navbar .separator {
+                color: #FFFF00;
+                margin: 0 3px;
+            }
+    
+            .main-container {
+                background-color: #CCCCCC;
+                min-height: 100vh;
+                padding: 20px;
+            }
+    
+            .content-wrapper {
+                max-width: 700px;
+                margin: 0 auto;
+                background-color: white;
+                border: 3px solid #999999;
+            }
+    
+            .page-content {
+                padding: 40px;
+                text-align: center;
+            }
+    
+            .page-title {
+                font-size: 32px;
+                margin-bottom: 30px;
+                font-weight: bold;
+                font-family: 'Courier New', monospace;
+            }
+    
+            .image-container {
+                margin: 30px 0;
+                text-align: center;
+            }
+    
+            .image-container img {
+                max-width: 100%;
+                height: auto;
+                max-height: 500px;
+            }
+    
+            .description {
+                white-space: pre-wrap;
+                margin: 30px 0;
+                font-size: 16px;
+                line-height: 1.6;
+                text-align: right;
+            }
+    
+            .page-number {
+                font-size: 12px;
+                color: #666666;
+                margin: 20px 0;
+            }
+    
+            .navigation-links {
+                margin: 30px 0;
+                text-align: right;
+            }
+    
+            .navigation-links a {
+                color: #0000FF;
+                text-decoration: underline;
+                margin: 0 10px;
+                font-size: 14px;
+            }
+    
+            .navigation-links a:hover {
+                color: #FF0000;
+            }
+    
+            .footer-links {
+                padding: 20px;
+                text-align: center;
+                border-top: 2px solid #CCCCCC;
+                font-size: 12px;
+            }
+    
+            .footer-links a {
+                color: #0000FF;
+                text-decoration: underline;
+                margin: 0 10px;
+            }
+    
+            .footer-links a:hover {
+                color: #FF0000;
+            }
+    
+            .pesterlog-container {
+                margin: 30px 0;
+                border: 2px dashed #999;
+                background-color: #f0f0f0;
+                border-radius: 5px;
+            }
+    
+            .pesterlog-header {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2px;
+                padding: 5px;
+                background-color: #333;
+            }
+    
+            .pesterlog-tab {
+                padding: 5px 10px;
+                border: 1px solid #000;
+                font-weight: bold;
+                font-size: 12px;
+            }
+    
+            .pesterlog-content {
+                padding: 15px;
+                background-color: white;
+                max-height: 400px;
+                overflow-y: auto;
+                font-family: 'Courier New', monospace;
+                font-size: 13px;
+                line-height: 1.6;
+                direction: rtl;
+                text-align: right;
+            }
+    
+            .dialogue-line {
+                margin: 5px 0;
+                word-break: break-word;
+            }
+    
+            .image-container {
+                margin: 30px 0;
+                text-align: center;
+            }
+    
+            .image-container img {
+                max-width: 100%;
+                height: auto;
+                max-height: 500px;
+            }
+
+            .swf-container {
+              margin: 30px auto;
+              text-align: center;
+              max-width: 100%;
+          }
+          
+          .ruffle-player {
+              width: 100%;
+              min-height: 400px;
+          }
+          
+          .ruffle-player {
+            width: 100%;
+            height: 400px;
+            min-height: 400px;
+          }
+          
+          .ruffle-player ruffle-player {
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+    
+        </style>
+        
+    </head>
+    <body>
+        <div class="navbar" style="font-size: medium;">
+            <a href="0001.html" style="color: #f0f0f0; font-size: medium;">إبدأ القراءة</span>
+            <span class="separator center-container"><a><img src="https://storage.homestuck.com/media/assets/candycorn.gif" style="margin-top: 5px;"></a></span>
+            <a href="https://homestuck.com/" class="green">الموقع الرسمي</a>
+            <span class="separator">|</span>
+            <a href="index.html" class="green">قارئ جديد؟</a>
+            <span class="separator"><a><img src="https://storage.homestuck.com/media/assets/candycorn.gif" style="margin-top: 5px;"></a></span>
+            <a href="https://homestuckofficial.store" style="color: #00e5ff;">المتجر الرسمي</a>
+            <span class="separator">|</span>
+            <a href="https://homestuck.bandcamp.com/" style="color: #00e5ff;">الموسيقى</a>
+            <span class="separator"><a><img src="https://storage.homestuck.com/media/assets/candycorn.gif" style="margin-top: 5px;"></a></span>
+            <a href="https://www.fruityrumpus.com/forums">المنتدى الرسمي</a>
+            <span class="separator">|</span>
+            <a href="contact.html">تواصل</a>
+        </div>
+
+    <div class="main-container">
+        <div class="content-wrapper">
+            <div class="page-content">
+                <div class="page-title">==></div>
+
+                
+        <div
+          class="image-container"
+          style="
+            filter: brightness(100%)
+                     contrast(100%);
+          "
+        >
+          <img
+            src="data:image/gif;base64,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"
+            alt="صورة"
+            style="width: 100%;"
+          />
+        </div>
+      
+
+                <div style="font-weight: bold; text-align: center;" class="description">لا شيء يحدث.
+
+يا لخيبة الأمل.</div>
+
+                
+
+               
+
+                <div class="navigation-links">
+                        <span>&gt;</span>
+                        <a style="font-weight: bold; font-size: 25px;" href="0095.html">جون: خذ الكعك!</a>
+                    </div>
+            </div>
+
+            <div class="footer-links">
+                <a href="0093.html">السابق</a>
+                <span>|</span>
+                <a href="0095.html">التالي</a>
+            </div>
+        </div>
+    </div>
+    <script>
+  window.addEventListener('load', function () {
+    const ruffle = window.RufflePlayer?.newest();
+
+    if (!ruffle) {
+      console.error('Ruffle لم يتم تحميله');
+      return;
+    }
+
+    document.querySelectorAll('.ruffle-player').forEach(function (container) {
+      const swfUrl = container.getAttribute('data-swf');
+
+      if (!swfUrl) return;
+
+      const player = ruffle.createPlayer();
+      container.appendChild(player);
+
+      player.style.width = '100%';
+      player.style.height = '400px';
+
+      player.load({
+        url: swfUrl,
+        autoplay: 'on',
+        unmuteOverlay: 'hidden'
+      });
+    });
+  });
+</script>
+</body>
+</html>
